@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="description" content="An example demonstrating Google Map integration with MEAN Apps">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- LESS & CSS  -->
+  <link href="app.less" type="text/css" rel="stylesheet/less">
+	<link href="bower_components/AdminLTE/dist/css/AdminLTE.min.css" rel="stylesheet" >
+	<link href="bower_components/AdminLTE/dist/css/skins/skin-green.css" rel="stylesheet">
+	
+</head>
+	
+<body class="hold-transition skin-green sidebar-mini">
+
+  <!-- Livereload script for development only (stripped during dist build) -->
+  <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+  <!-- JS from Bower Components -->
+  <script src="bower_components/less.js/dist/less.js" data-concat="false"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="bower_components/AdminLTE/dist/js/app.min.js"></script>
+	<script src="bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
+  <!-- Add New Bower Component JS Above -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0eXKGSsaU_sjRYDZS64_hP_RPCB_RG8c"></script>
+
+  <!-- Main App JS -->
+  <script src="app.js"></script>
+  <script src="partial/articles/articles.js"></script>
+  <script src="partial/new-article/new-article.js"></script>
+  <script src="partial/home/home.js"></script>
+  <script src="partial/members/members.js"></script>
+  <script src="partial/projects/projects.js"></script>
+  <script src="partial/new-project/new-project.js"></script>
+  <script src="service/project-service.js"></script>
+  <script src="partial/edit-project/edit-project.js"></script>
+  <script src="partial/google-map/google-map.js"></script>
+  <!-- Add New Component JS Above -->
+	
+		<!--========WRAPPER============-->
+	
+	
+		<div class="wrapper">
+			
+			
+		<!--========MAIN-HEADER============-->
+			
+			
+		<div class="main-header">
+									
+			<div  ui-sref="home" class="logo">
+				  <!-- mini logo for sidebar mini 50x50 pixels -->
+				  <span class="logo-mini"><b>A</b>LT</span>
+				  <!-- logo for regular state and mobile devices -->
+				  <span class="logo-lg"><b>Admin</b>LTE</span>
+						</div>					
+			<nav class="navbar navbar-static-top" role="navigation">
+				
+			
+				<!--========BURGER MENU============-->
+				
+				
+			<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </a>
+
+				
+			<!-- Navbar Right Menu -->
+				<div class="navbar-custom-menu">
+								
+					<ul class="nav navbar-nav">
+								
+							
+						<!-- User Account: style can be found in dropdown.less -->
+						<li class="dropdown user user-menu">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<img src="images/images1.jpeg" class="user-image" alt="User Image">
+						<span class="hidden-xs">Marjan Marič</span>
+						</a>
+						<ul class="dropdown-menu">
+						<!-- User image -->
+						<li class="user-header">
+						  <img src="images/images1.jpeg" class="img-circle" alt="User Image">
+						 <p>
+						Marjan Marič - Web Developer
+						<small>Member since Jun. 2016</small>
+						  </p>
+							</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+		</div>
+		
+		
+		
+	
+		
+		
+		
+		
+		<div class="sidebar-wrapper">
+		
+
+	
+			
+			<div class="main-sidebar">
+			  <!-- Inner sidebar -->
+			  <div class="sidebar">
+					<!-- Sidebar Menu -->
+				
+				  
+				  
+				  
+				  
+				  
+					<ul class="sidebar-menu">
+					  <!--<li class="header">Menu</li> -->
+						      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+						
+					  <!-- Optionally, you can add icons to the links -->
+						
+		 <li ui-sref="home" ui-sref-active="active" class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Home</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Home 1</a></li>
+            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Home 2</a></li>
+          </ul>
+        </li>
+						
+						
+		<li ui-sref="new-article" ui-sref-active="active">
+          <a href="#">
+            <i class="fa fa-envelope"></i> <span>Mailbox</span>
+            <small class="label pull-right bg-green">0</small>
+          </a>
+        </li>
+						
+						
+						
+						<li ui-sref="articles" ui-sref-active="active">
+							<a href="#">
+								 <i class="fa fa-share"></i> <span>Articles</span>
+							  <small class="label pull-right bg-green">0</small>	
+							</a></li>
+							<!--<span>Articles</span></a></li>-->
+						
+						<li ui-sref="projects" ui-sref-active="active">
+							<a href="#">
+								<i class="fa fa-edit"></i> <span>Projects</span>
+							</a></li>
+						<!--	<span>Projects</span></a></li>	-->
+						
+						<li ui-sref="members" ui-sref-active="active">
+							<a href="#">
+								<i class="fa fa-th"></i> <span>Members</span>
+							</a></li>
+						<!--	<span>Members</span></a></li>	-->
+					 
+						<li ui-sref="google-map" ui-sref-active="active">
+							<a href="#">
+					<!--		<span>Google-map</span></a></li>	-->
+						
+					</ul><!-- /.sidebar-menu -->
+				</div>
+			</div>
+		</div>
+		
+		<div class="content-wrapper" ui-view>
+		
+		</div>
+		
+	</div> 
+	
+	
+  
+
+</body>
+</html>

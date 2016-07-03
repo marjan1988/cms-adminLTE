@@ -1,0 +1,49 @@
+@import "bower_components/bootstrap/less/bootstrap.less";
+//@import "bower_components/bootstrap/less/theme.less";
+@import "bower_components/font-awesome/less/font-awesome.less";
+@fa-font-path: "bower_components/font-awesome/fonts";
+
+/* Component LESS */
+@import "partial/articles/articles.less";
+@import "partial/new-article/new-article.less";
+@import "partial/home/home.less";
+@import "partial/members/members.less";
+@import "partial/projects/projects.less";
+@import "partial/new-project/new-project.less";
+@import "partial/edit-project/edit-project.less";
+@import "partial/google-map/google-map.less";
+/* Add Component LESS Above */
+
+/* Required for Angular UI Bootstrap */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.wrapper{
+	height: 100vh;
+}
+
+.content-wrapper{
+	
+	overflow: auto;
+}
+
+.button-delete{
+	
+	float:right;
+	margin-right: 30px;
+}
+
+.button-edit{
+	float:right;
+	margin-right: 10px;
+}
+
+
+#button-delete{
+	
+	margin-right: 25px;
+}
+
+#button-edit{
+	
+	margin-right: 15px;
+}

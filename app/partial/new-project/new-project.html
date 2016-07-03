@@ -1,0 +1,47 @@
+<section class ="content-header">
+
+	<h1>New project</h1>
+
+</section>
+<section class="content">
+<!-- ================INPUT-FIELD================= -->	
+	<label>Title</label>
+		<input ng-model="project.title" type="text" class="form-control">
+		</br>	
+
+	<label>Content</label>
+		<textarea ng-model="project.body" type="text" class="form-control">	
+		</textarea>
+		</br>
+
+	<label>Link</label>
+		<input ng-model="project.link" type="text" class="form-control">
+		</br>
+
+	<!-- ================SELECT-FIELD================= -->
+
+	<label>Author</label>
+		<select ng-model="project.author" ng-options="author.name for author in authors" class="form-control"></select>
+		</br>
+
+	<!-- ================COVER IMAGE -> LOAD PROGRESS-BAR================= -->
+
+	<label>Cover image</label>
+		<br/>
+		<div class="drop-zone" ngf-drop="uploadFiles($file)" ngf-drag-over-class="'dragover'">
+		<div class="btn btn-primary" ngf-select="uploadFiles($file)">Upload cover image</div> 
+		</div>
+		<p ng-if="project.imageUrl">
+			<img ng-src="http://localhost:3030/uploads/{{project.imageUrl}}">
+		</p>
+		<br/>
+		<div class="progress" ng-if="isUploading">
+		<div class="progress-bar progress-bar-striped active" role="progressbar"
+			 aria-valuenow="{{uploadData.progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{uploadData.progress}}%">{{uploadData.progress}}% </div>
+</div>              
+	 
+<!-- ================BUTTON CREATE================= -->
+
+<div class="btn btn-success pull-right"  ng-disabled="isCreating" ng-click="onCreateClick()">Create</div>
+	
+</section>
