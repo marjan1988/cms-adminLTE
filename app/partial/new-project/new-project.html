@@ -32,7 +32,7 @@
 		<div class="btn btn-primary" ngf-select="uploadFiles($file)">Upload cover image</div> 
 		</div>
 		<p ng-if="project.imageUrl">
-			<img ng-src="http://localhost:3030/uploads/{{project.imageUrl}}">
+			<img style="width:150px" ng-src="http://localhost:3030/uploads/{{project.imageUrl}}">
 		</p>
 		<br/>
 		<div class="progress" ng-if="isUploading">

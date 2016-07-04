@@ -53,11 +53,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 			}
 		}
     });
-    $stateProvider.state('google-map', {
-        url: '/google-map',
-        templateUrl: 'partial/google-map/google-map.html',
-		controller: 'GoogleMapCtrl'
-    });
+   
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');
 
