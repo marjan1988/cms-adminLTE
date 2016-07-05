@@ -28,28 +28,7 @@ module.exports = function(){
        res.send(req.file);
 
    });
-	//
-	
-	/*
-	server.get('/upload', function(req, res){
-		
-		const Project = mongoose.model('Project');
-		Project.find(function(err, docs){
-			console.log(docs);
-			if(err){
-				res.status(400).send(err);
-			}else{
-				res.send(docs);	
-			};
-			
-		});
-		
-	} );
-	
-	server.post('/upload', upload.single('file'), function(req, res){
-		res.sendStatus(200);
-	});
-	*/
+
 	
 	server.get('/projects', function(req, res){
 		

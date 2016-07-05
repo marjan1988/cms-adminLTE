@@ -11,21 +11,13 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'partial/articles/articles.html',
 		controller:'ArticlesCtrl'
     });
-    $stateProvider.state('new-article', {
-        url: '/new-article',
-        templateUrl: 'partial/new-article/new-article.html',
-		controller:'NewArticleCtrl'
-    });
+  
     $stateProvider.state('home', {
         url: '/home',
         templateUrl: 'partial/home/home.html',
 		controller:'HomeCtrl'
     });
-    $stateProvider.state('members', {
-        url: '/members',
-        templateUrl: 'partial/members/members.html',
-		controller:'MembersCtrl'
-    });
+   
     $stateProvider.state('projects', {
         url: '/projects',
         templateUrl: 'partial/projects/projects.html',

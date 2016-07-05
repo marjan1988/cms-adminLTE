@@ -42,34 +42,7 @@ $scope.uploadFiles = function (file) {
        }, function (evt) {});
 
    };
-  /* $scope.uploadFiles = function(file){
-
-        $scope.isUploading = true;
-
-        Upload.upload({
-            url:'http://localhost:3030/upload',
-            data: { file:file }
-        }).then(function (resp) {
-
-            $scope.project.imageName = resp.data.filename;
-				
-            $timeout(function(){
-
-                $scope.isUploading = false;
-
-            },1000);
-
-        }, function (resp) {
-            console.log('Error status: ' + resp.status);
-        }, function (evt) {
-            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            $scope.uploadData.progress = progressPercentage;
-
-            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-        });
-
-    };*/
-
+ 
     $scope.onCreateClick = function(){
 
         $scope.isCreating = true;
